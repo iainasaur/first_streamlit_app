@@ -24,9 +24,10 @@ streamlit.dataframe(fruits_to_show)
 
 #mew section to shjow fruity vice api response
 streamlit.header('Fruity Fruit Advice!')
-
+friut_choice = streamlit.test_input('What friut would you like information about?', 'Kiwi')
+streamlit.write('The user entered', fruit_choice)
 import requests
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "kiwi")
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "fruit_choice")
 
 
 fruityvice_normalized= pandas.json_normalize(fruityvice_response.json())
